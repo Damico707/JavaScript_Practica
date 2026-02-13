@@ -1,0 +1,106 @@
+/* Reset básico: elimina márgenes por defecto y define la fuente global */
+* {
+    margin: 0%;
+    font-family: "SN Pro", sans-serif;
+}
+
+/* Estilos generales para enlaces */
+a {
+    text-decoration: none;          /* Quita el subrayado */
+    color: rgb(255, 255, 255);      /* Color blanco para los links */
+}
+
+/* Contenedor principal del perfil */
+.profile-box {
+    width: 25%;                                   /* Ancho del 25% del contenedor padre */
+    background-color: rgba(217, 217, 217, 0.5);   /* Fondo gris con transparencia */
+    border-radius: 20px;                          /* Bordes redondeados */
+    display: grid;                                /* Usa CSS Grid */
+    grid-gap: 20px;                               /* Espacio entre elementos */
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "pp"
+        "perf";                                   /* Definición de áreas del grid */
+    padding: 20px;                                /* Espaciado interno */
+    margin-top: 3%;                               /* Separación superior */
+    justify-content: center;                      /* Centra horizontalmente */
+    align-items: center;                          /* Centra verticalmente */
+}
+
+/* Contenedor interno del perfil */
+.login-container {
+    display: flex;
+    flex-direction: column;       /* Elementos en columna */
+    align-items: center;          /* Centrado horizontal */
+}
+
+/* Contenedor de la foto del perfil */
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    margin-top: 4%;
+    font-size: 38px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;             /* Negrita */
+    grid-area: pp;                /* Ubicación en el grid */
+}
+
+/* Subtítulo */
+h2 {
+    font-weight: 500;
+    color: rgb(247, 64, 18);       /* Color naranja/rojo */
+    font-size: 20px;
+    grid-area: pp;
+    text-align: center;
+}
+
+/* Contenedor de información del perfil */
+.informacion1 {
+    display: flex;
+    flex-direction: column;       /* Elementos apilados */
+    gap: 20px;                    /* Espacio entre ellos */
+    max-width: fit-content;       /* Ajusta ancho al contenido */
+    justify-self: center;         /* Centra dentro del grid */
+}
+
+/* Campos de texto o inputs */
+.text {
+    border-radius: 20px;
+    font-size: 30px;
+    height: 50px;
+    font-family: "SN Pro", sans-serif;
+    color: rgb(151, 151, 151);     /* Texto gris */
+    background-color: rgb(255, 255, 255);
+    padding: 0% 20px;              /* Padding horizontal */
+}
+
+/* Botón para cerrar el perfil */
+.close-profile {
+    background-color: rgba(255, 68, 0, 0.712);
+    color: white;
+    transition: all 0.3s ease;    /* Animación suave */
+}
+
+/* Efecto hover del botón */
+.close-profile:hover {
+    background-color: rgb(226, 54, 11);
+    transform: scale(1.1);        /* Aumenta el tamaño */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Diseño responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+    .profile-box {
+        display: flex;
+        flex-direction: column;   /* Cambia grid por columna */
+    }
+}
