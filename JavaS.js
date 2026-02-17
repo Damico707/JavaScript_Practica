@@ -168,32 +168,40 @@ let notas_estudiantes = [
         Git: "45"
     }
 ];
+let cargo = prompt ("Bienvenido, seleccione su cargo \n\n 1. Camper \n 2. Trainer \n 3. Coordinador \n 0. Salir del programa")
 
-let cargo = prompt ("Bienvenido, seleccione su cargo \n\n 1. Camper \n 2. Trainer \n 3. Coordinador")
+    switch (cargo) {
+        
+        case "1":
+            while (cargo !=="0"){
+            cargo = prompt ("Bienvenido, seleccione su cargo \n\n 1. Camper \n 2. Trainer \n 3. Coordinador \n 0. Salir del programa")
 
-switch (cargo) {
-    case "1":
-        console.log ("Bienvenido camper");   
-            let identificacion = prompt ("Porfavor ingrese su ID para ver sus notas");
-            let camper = notas_estudiantes.find(e => e.id === identificacion); 
-            while ( camper === undefined ){
-                identificacion = prompt ("Id no valido, Intente nuevamente");
-                camper = notas_estudiantes.find(e => e.id === identificacion);
+            console.log ("Bienvenido camper");   
+                let identificacion = prompt ("Porfavor ingrese su ID para ver sus notas");
+                let camper = notas_estudiantes.find(e => e.id === identificacion); 
+                while ( camper === undefined ){
+                    identificacion = prompt ("Id no valido, Intente nuevamente");
+                    camper = notas_estudiantes.find(e => e.id === identificacion);
+                }
+                alert ("Bienvenid@  " + camper.nombre)
+                console.table (camper)
             }
-            alert ("Bienvenid@  " + camper.nombre)
-            console.table (camper)
-    break;
+        break;
 
-    case"2":
-        console.log("Bienvenido trainer");
-        let trainer= "trainer"
-    break;
+        case"2":
+            console.log("Bienvenido trainer");
+            let trainer= "trainer"
+        break;
 
-    case"3":
-    console.log("Bienvenido Coordinador");
-        let coordinador= "coordinador"
-    break;
+        case"3":
+            console.log("Bienvenido Coordinador");
+            let coordinador= "coordinador"
+            break;
 
-    default:
-        console.log ("Ingrese un cargo valido")
-}
+            default:
+                console.log ("Ingrese un cargo valido")
+        case"0":
+            alert("saliendo...");
+            break;
+break
+    }
