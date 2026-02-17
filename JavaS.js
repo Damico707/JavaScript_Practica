@@ -173,16 +173,15 @@ let cargo = prompt ("Bienvenido, seleccione su cargo \n\n 1. Camper \n 2. Traine
 
 switch (cargo) {
     case "1":
-        console.log ("Bienvenido camper");
-        let identificacion = prompt ("Porfavor ingrese su ID para ver sus notas");
-        let camper = notas_estudiantes.find(e => e.id === identificacion);
-        
-        if (camper===undefined || camper===null)
-            alert("Error al introducir el id")
-        else 
+        console.log ("Bienvenido camper");   
+            let identificacion = prompt ("Porfavor ingrese su ID para ver sus notas");
+            let camper = notas_estudiantes.find(e => e.id === identificacion); 
+            while ( camper === undefined ){
+                identificacion = prompt ("Id no valido, Intente nuevamente");
+                camper = notas_estudiantes.find(e => e.id === identificacion);
+            }
             alert ("Bienvenid@  " + camper.nombre)
             console.table (camper)
-            console.log ("Ingrese F para salir de la pagina")
     break;
 
     case"2":
